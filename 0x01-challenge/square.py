@@ -5,14 +5,14 @@
 class square():
     """square class definition"""
 
-    width = 0
-    height = 0
-
     def __init__(self, *args, **kwargs):
         """init method"""
         h = kwargs.get('height')
         w = kwargs.get('width')
-        if (h is not None and w is not None and h == w):
+        if (h is None or w is None or h != w):
+            self.height = 0
+            self.width = 0
+        else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
