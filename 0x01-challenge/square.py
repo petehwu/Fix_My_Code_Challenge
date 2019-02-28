@@ -1,12 +1,15 @@
 #!/usr/bin/python3
+""" square class """
 
 
 class square():
+    """square class definition"""
 
     width = 0
     height = 0
 
     def __init__(self, *args, **kwargs):
+        """init method"""
         h = kwargs.get('height')
         w = kwargs.get('width')
         if (h is not None and w is not None and h == w):
@@ -18,9 +21,11 @@ class square():
         return self.width * self.width
 
     def PermiterOfMySquare(self):
+        """returns perimeter"""
         return (self.width * 2) + (self.height * 2)
 
     def __str__(self):
+        """format object for printing"""
         return "{}/{}".format(self.width, self.height)
 
 if __name__ == "__main__":
